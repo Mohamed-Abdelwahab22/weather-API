@@ -60,30 +60,7 @@ async function getData(userWord){
 
 }
 
-getData('tokyo')
-
-
-// function mainfunc(userWord){
-
-
-//     let http = new XMLHttpRequest();
-
-//     http.open( "GET" , `http://api.weatherapi.com/v1/forecast.json?key=f8526968ee4643859de162156211109&q=${userWord}&days=3` )
-
-//     http.send();
-
-//     http.addEventListener("readystatechange" , test);
-
-//     function test(){
-//         if( http.readyState == 4 && http.status == 200){
-//             allData = JSON.parse(http.response)
-//             displayData()
-//         }
-//     }
-
-
-// }
-
+getData('cairo')
 
 
 
@@ -144,8 +121,6 @@ function displayData(){
 
     document.getElementById("main").innerHTML = data + hasala;
 }
-
-mainfunc("cairo")
 
 
 
