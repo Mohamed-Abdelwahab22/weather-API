@@ -48,27 +48,41 @@ else if ( firstDay == 6 && secondDay == 1 && thirdDay == 0){
 
 let allData;
 
+async function getData(userWord){
 
-function mainfunc(userWord){
+    var reponse= await fetch(`http://api.weatherapi.com/v1/forecast.json?key=f8526968ee4643859de162156211109&q=${userWord}&days=3`);
 
+    allData = await reponse.json()
 
-    let http = new XMLHttpRequest();
+    console.log(allData)
 
-    http.open( "GET" , `http://api.weatherapi.com/v1/forecast.json?key=f8526968ee4643859de162156211109&q=${userWord}&days=3` )
-
-    http.send();
-
-    http.addEventListener("readystatechange" , test);
-
-    function test(){
-        if( http.readyState == 4 && http.status == 200){
-            allData = JSON.parse(http.response)
-            displayData()
-        }
-    }
-
+    displayData()
 
 }
+
+getData('cairo')
+
+
+// function mainfunc(userWord){
+
+
+//     let http = new XMLHttpRequest();
+
+//     http.open( "GET" , `http://api.weatherapi.com/v1/forecast.json?key=f8526968ee4643859de162156211109&q=${userWord}&days=3` )
+
+//     http.send();
+
+//     http.addEventListener("readystatechange" , test);
+
+//     function test(){
+//         if( http.readyState == 4 && http.status == 200){
+//             allData = JSON.parse(http.response)
+//             displayData()
+//         }
+//     }
+
+
+// }
 
 
 
