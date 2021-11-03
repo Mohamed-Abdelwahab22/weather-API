@@ -50,7 +50,7 @@ let allData;
 
 async function getData(userWord){
 
-    var reponse= await fetch(`https://cors-anywhere.herokuapp.com/https://api.weatherapi.com/v1/forecast.json?key=f8526968ee4643859de162156211109&q=${userWord}&days=3`);
+    var reponse= await fetch(`http://api.weatherapi.com/v1/forecast.json?key=f8526968ee4643859de162156211109&q=${userWord}&days=3`);
 
     allData = await reponse.json()
 
